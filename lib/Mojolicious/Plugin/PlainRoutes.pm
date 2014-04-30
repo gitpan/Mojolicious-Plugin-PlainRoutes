@@ -1,7 +1,7 @@
 use 5.014;
 package Mojolicious::Plugin::PlainRoutes;
 # ABSTRACT: Plaintext route definitions for Mojolicious
-$Mojolicious::Plugin::PlainRoutes::VERSION = '0.01';
+$Mojolicious::Plugin::PlainRoutes::VERSION = '0.02';
 use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::Util qw/decamelize/;
 
@@ -290,7 +290,7 @@ Mojolicious::Plugin::PlainRoutes - Plaintext route definitions for Mojolicious
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -316,9 +316,9 @@ In lib/myapp.routes:
 
 =head1 DESCRIPTION
 
-Routes are defined very simply: a HTTP verb followed by a path, followed by an
-controller/action. (The arrow is optional.) An optional name for the route can
-be appended with parentheses.
+Routes are defined as an HTTP verb, followed by a path, followed by a
+controller/action pair. (The arrow is optional.) An optional name for the
+route can be appended with parentheses.
 
 If a route is followed by braces, then it will act as a bridge for the
 contained routes.
