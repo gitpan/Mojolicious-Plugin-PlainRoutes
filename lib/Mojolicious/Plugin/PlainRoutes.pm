@@ -1,7 +1,7 @@
 use 5.014;
 package Mojolicious::Plugin::PlainRoutes;
 # ABSTRACT: Plaintext route definitions for Mojolicious
-$Mojolicious::Plugin::PlainRoutes::VERSION = '0.02';
+$Mojolicious::Plugin::PlainRoutes::VERSION = '0.03';
 use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::Util qw/decamelize/;
 
@@ -247,9 +247,12 @@ sub process {
 
 	for my $node (@$tree) {
 		my $token = ref $node eq 'ARRAY' ? shift @$node : $node;
+
 		my $route = $bridge->route($token->{path})
-		                     ->via($token->{verb})
-		                      ->to($token->{action});
+		                   ->to($token->{action});
+		if ($token->{verb} ne 'ANY') {
+			$route->via($token->{verb});
+		}
 
 		my $p = $route->pattern;
 		if (exists $token->{name}) {
@@ -290,7 +293,7 @@ Mojolicious::Plugin::PlainRoutes - Plaintext route definitions for Mojolicious
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
