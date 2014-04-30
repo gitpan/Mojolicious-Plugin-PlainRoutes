@@ -1,0 +1,20 @@
+---
+abstract: 'Plaintext route definitions for Mojolicious'
+author:
+  - 'Cameron Thornton <cthor@cpan.org>'
+build_requires:
+  File::Temp: 0.22
+  Test::Deep: 0.110
+  Test::More: 0.98
+configure_requires:
+  ExtUtils::MakeMaker: 6.30
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.015, CPAN::Meta::Converter version 2.120921'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Mojolicious-Plugin-PlainRoutes
+requires:
+  Mojolicious: 4.60
+version: 0.01
