@@ -17,4 +17,4 @@ meta-spec:
 name: Mojolicious-Plugin-PlainRoutes
 requires:
   Mojolicious: 4.60
-version: 0.03
+version: 0.04

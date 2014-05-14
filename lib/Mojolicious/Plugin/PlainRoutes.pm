@@ -1,7 +1,7 @@
 use 5.014;
 package Mojolicious::Plugin::PlainRoutes;
 # ABSTRACT: Plaintext route definitions for Mojolicious
-$Mojolicious::Plugin::PlainRoutes::VERSION = '0.03';
+$Mojolicious::Plugin::PlainRoutes::VERSION = '0.04';
 use Mojo::Base 'Mojolicious::Plugin';
 use Mojo::Util qw/decamelize/;
 
@@ -48,7 +48,7 @@ sub _tokenise {
 		arrow      => qr{ -> }x,
 		scope      => qr( { | } )x,
 		action     => qr{ [\w\-:]* \. \w* }x,
-		name       => qr{ \( \w+ \) }x,
+		name       => qr{ \( [^)]+ \) }x,
 		eol        => qr{ \n }x,
 		space      => qr{ [^\S\n]+ }x,
 	);
@@ -293,7 +293,7 @@ Mojolicious::Plugin::PlainRoutes - Plaintext route definitions for Mojolicious
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
